@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bond Simulation</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            width: 300px;
+            margin: 20px 0;
+        }
+        button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sveiks, tu esi izvēlējies Daniel Craig, tēloto Bondu.</h1>
+    <p>Craig Bonda tēls bija brutāls un emocionāli ievainojams, pievienojot Bondam fizioloģisku intensitāti un reālismu. Craig vēlējās atspoguļot Bondu kā sarežģītu un reālu cilvēku, kuram ir dziļas personīgas cīņas un fiziskā izturība.</p>
+    <p>Tev šis tēls jātēlo visas dienas garumā.</p>
+    <p>Vai tu apstiprini savu BONDU?</p>
+    <img src="https://example.com/daniel-craig.jpg" alt="Daniel Craig as James Bond">
+    <br>
+    <button onclick="confirmBond()">Apstiprinu</button>
+    <button onclick="refreshPage()">Nē, es samainīšos</button>
+
+    <div id="bond-container" style="display:none;">
+        <h1>txt txt txt</h1>
+        <button onclick="completeTask()">Izpildīts</button>
+        <button onclick="failTask()">Nespēju izpildīt</button>
+    </div>
+
+    <div id="task-container" style="display:none;">
+        <h1>Tu esi izpildījis savu uzdevumu!</h1>
+        <img src="https://example.com/success-image.jpg" alt="Success">
+    </div>
+
+    <script>
+        function confirmBond() {
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('h1').innerText = 'Tev šis tēls jātēlo visas dienas garumā.';
+            document.querySelector('p').innerText = 'Izvēlies savu nākamo soli:';
+            document.getElementById('bond-container').style.display = 'block';
+        }
+
+        function refreshPage() {
+            location.reload();
+        }
+
+        function completeTask() {
+            document.getElementById('bond-container').style.display = 'none';
+            document.getElementById('task-container').style.display = 'block';
+        }
+
+        function failTask() {
+            document.getElementById('bond-container').style.display = 'none';
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('h1').innerText = 'Sveiks, tu esi izvēlējies Daniel Craig, tēloto Bondu.';
+            document.querySelector('p').innerText = 'Vai tu apstiprini savu BONDU?';
+            document.querySelector('img').src = 'https://example.com/daniel-craig.jpg';
+        }
+    </script>
+</
